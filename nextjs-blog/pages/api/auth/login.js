@@ -6,9 +6,7 @@ const loginHandler = (request,response) => {
     let token = {};
 
     if (userName === 'analista' && password === 'lielv08') {  /// Sustituir por consulta al backent
-
-
-        token =  jwt.sign({
+        let token =  jwt.sign({
             exp: Math.floor(Date.now() / 1000) + 60 * 60, //una hora
             userName: 'USER_FROM_DATABASE'
         },'SECRET_WORD_FROM_ENV');
